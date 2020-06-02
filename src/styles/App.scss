@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+a {
+  color: #01B5CA;
+  transition-duration: .3s;
+  &:hover {
+    color: #1E81BE;
+  }
+}
+
+.btn-danger {
+  background-color: #fd397a;
+  border: 1px solid #fd397a;
+  &:hover {
+    background-color: #f20252;
+    border: 1px solid #f20252;
+  }
+}
+
+.btn-primary {
+  background-color: #01B5CA;
+  border: 1px solid #01B5CA;
+  &:hover {
+    background-color: #1E81BE;
+    border: 1px solid #1E81BE;
+  }
+}
+
+.App {
+  .Layout {
+    .navigation {
+      background-color: #fff;
+      box-shadow: 4px 0 30px #1F7FBE;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      h3 {
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: 1rem;
+        background-image: linear-gradient(45deg, #01B5CA, #1E81BE);
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      a {
+        color: #505050;
+        transition-duration: .3s;
+        font-size: 16px;
+        &:hover {
+          color: #01B5CA;
+        }
+      }
+    }
+    .content {
+      background: linear-gradient(180deg, #207CBD 0%, #00B5CA 62.5%);
+      min-height: 100vh;
+
+      //content containers
+
+      .Information {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+        color: #fff;
+        h2 {
+          margin-bottom: 1rem;
+          font-weight: 700;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .Edit, .Add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        .card {
+          width: 80%;
+          .card-header {
+            font-weight: bold;
+            background-color: #fff;
+            border-bottom: 1px solid #dcdcdc;
+            color: #505050;
+            margin: 0 1.5rem;
+            padding: 1rem 0;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .Persons {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+        margin: 0 auto;
+        .filters {
+          width: 80%;
+          margin-bottom: 2rem;
+          .form-group {
+            margin-bottom: 0;
+            display: flex;
+            button {
+              margin-left: 1rem;
+            }
+          }
+        }
+        .persons-list {
+          width: 80%;
+          .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            button {
+              border-radius: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 35px;
+              height: 35px;
+            }
+          }
+          .card-body {
+            .Person {
+              &:not(:last-child) {
+                margin-bottom: 1rem;
+              }
+              .card-body {
+                display: flex;
+                justify-content: space-between;
+                .person-info {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  p {
+                    margin-right: 2rem;
+                    margin-bottom: 0;
+                    font-size: 13px;
+                    span {
+                      font-size: 13px;
+                      font-weight: bold;
+                      display: block;
+                    }
+                  }
+                }
+                .buttons {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  a {
+                    font-size: 13px;
+                    margin-left: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
