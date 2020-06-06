@@ -13,7 +13,7 @@ class Add extends Component {
       phone: '',
       email: '',
       born: '',
-      department: ''
+      department: 'IT'
     };
 
     changeName = event => {
@@ -60,10 +60,9 @@ class Add extends Component {
             (this.state.name === '')||
             (this.state.surName === '')||
             (this.state.patronymic === '')||
-            (this.state.born === null)||
+            (this.state.born === '')||
             (this.state.email === '')||
             (this.state.phone === null)||
-            (this.state.department === '')||
             (!isValidPhoneNumber)||
             (!isValidEmail)
         );
@@ -112,11 +111,11 @@ class Add extends Component {
                                 </Form.Group>
                                 <Form.Group as={Col}>
                                     <Form.Label>Department</Form.Label>
-                                    <Form.Control as="select" onChange={this.changeDepartment}>
-                                        <option>IT</option>
-                                        <option>Sales</option>
-                                        <option>Delivery</option>
-                                        <option>Legal</option>
+                                    <Form.Control as="select" defaultValue={this.state.department} onChange={this.changeDepartment}>
+                                        <option value={'IT'}>IT</option>
+                                        <option value={'Sales'}>Sales</option>
+                                        <option value={'Delivery'}>Delivery</option>
+                                        <option value={'Legal'}>Legal</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Form.Row>

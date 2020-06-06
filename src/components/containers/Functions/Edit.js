@@ -72,7 +72,7 @@ class Edit extends Component {
                 phone: this.state.phone,
                 email: this.state.email,
                 department: this.state.department
-            })
+            });
             this.props.history.push('/')
         } catch (e) {
             console.log(e)
@@ -89,16 +89,17 @@ class Edit extends Component {
     };
 
     render() {
+        console.log(this.state.department)
+
         const isValidEmail = validator.isEmail(this.state.email);
         const isValidPhoneNumber = validator.isMobilePhone(this.state.phone);
         const validate = (
             (this.state.name === '')||
             (this.state.surName === '')||
             (this.state.patronymic === '')||
-            (this.state.born === null)||
+            (this.state.born === '')||
             (this.state.email === '')||
             (this.state.phone === null)||
-            (this.state.department === '')||
             (!isValidPhoneNumber)||
             (!isValidEmail)
         );
@@ -148,11 +149,11 @@ class Edit extends Component {
                                 </Form.Group>
                                 <Form.Group as={Col}>
                                     <Form.Label>Department</Form.Label>
-                                    <Form.Control as="select" onChange={this.changeDepartment}>
-                                        <option>IT</option>
-                                        <option>Sales</option>
-                                        <option>Delivery</option>
-                                        <option>Legal</option>
+                                    <Form.Control as="select" value={this.state.department} onChange={this.changeDepartment}>
+                                        <option value={'IT'}>IT</option>
+                                        <option value={'Sales'}>Sales</option>
+                                        <option value={'Delivery'}>Delivery</option>
+                                        <option value={'Legal'}>Legal</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Form.Row>
